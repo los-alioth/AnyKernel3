@@ -45,13 +45,13 @@ write_boot;
 
 
 # shell variables
-#block=vendor_boot;
-#is_slot_device=1;
-#ramdisk_compression=auto;
-#patch_vbmeta_flag=auto;
+block=vendor_boot;
+is_slot_device=1;
+ramdisk_compression=auto;
+patch_vbmeta_flag=auto;
 
 # reset for vendor_boot patching
-#reset_ak;
+reset_ak;
 
 
 ## AnyKernel vendor_boot install
