@@ -32,6 +32,18 @@ patch_vbmeta_flag=auto;
 set_perm_recursive 0 0 755 644 $ramdisk/*;
 set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
+case "$ZIPFILE" in
+    *ksu*)
+    ui_print " • Using KSU variant";
+    rm Image;
+    mv ksu/Image $home/Image;
+    ;;
+    *)
+    ui_print " • Using normal variant";
+    ;;
+esac
+    
+
 
 ## AnyKernel boot install
 dump_boot;
