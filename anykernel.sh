@@ -34,33 +34,13 @@ set_perm_recursive 0 0 755 644 $ramdisk/*;
 set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
 case "$ZIPFILE" in
-  *66fps*|*66hz*)
-    ui_print "  • Setting 66 Hz refresh rate"
-    patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=1"
+    *ksu*)
+    ui_print " • Using KSU variant";
+    rm Image;
+    mv ksu/Image $home/Image;
     ;;
-  *69fps*|*69hz*)
-    ui_print "  • Setting 69 Hz refresh rate"
-    patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=2"
-    ;;
-  *72fps*|*72hz*)
-    ui_print "  • Setting 72 Hz refresh rate"
-    patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=3"
-    ;;
-  *77fps*|*77hz*)
-    ui_print "  • Setting 77 Hz refresh rate"
-    patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=4"
-    ;;
-  *79fps*|*79hz*)
-    ui_print "  • Setting 79 Hz refresh rate"
-    patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=5"
-    ;;
-  *80fps*|*80hz*)
-    ui_print "  • Setting 80 Hz refresh rate"
-    patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=6"
-    ;;
-  *)
-    ui_print "  • Setting 60 Hz refresh rate"
-    patch_cmdline "msm_drm.framerate_override" ""
+    *)
+    ui_print " • Using normal variant";
     ;;
 esac
 
