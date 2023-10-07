@@ -16,10 +16,11 @@ supported.patchlevels=
 '; } # end properties
 
 # shell variables
-block=/dev/block/bootdevice/by-name/boot;
-is_slot_device=1;
+block=boot;
+is_slot_device=auto;
 ramdisk_compression=auto;
 patch_vbmeta_flag=auto;
+no_block_display=1
 
 
 ## AnyKernel methods (DO NOT CHANGE)
@@ -55,13 +56,6 @@ flash_dtbo;
 write_boot;
 ## end boot install
 
-
-# shell variables
-block=vendor_boot;
-is_slot_device=1;
-ramdisk_compression=auto;
-patch_vbmeta_flag=auto;
-
 # reset for vendor_boot patching
 reset_ak;
 
@@ -71,4 +65,3 @@ reset_ak;
 
 #flash_boot;
 ## end vendor_boot install
-
