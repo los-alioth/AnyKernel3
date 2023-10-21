@@ -11,7 +11,7 @@ do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
 device.name1=cas
-supported.versions=11 - 13
+supported.versions=11 - 14
 supported.patchlevels=
 '; } # end properties
 
