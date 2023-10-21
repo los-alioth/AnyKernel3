@@ -13,7 +13,7 @@ do.cleanuponabort=0
 device.name1=apollo
 device.name2=apolloin
 device.name3=apollon
-supported.versions=11 - 13
+supported.versions=11 - 14
 supported.patchlevels=
 '; } # end properties
 
